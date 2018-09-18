@@ -4,4 +4,7 @@ defmodule Hangman do
 
   defdelegate tally(game), to: Hangman.Tally
 
+  defdelegate make_move(game, guess), to: Hangman.Guess
+
+
 end
