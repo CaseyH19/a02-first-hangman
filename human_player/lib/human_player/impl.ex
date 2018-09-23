@@ -12,10 +12,10 @@ defmodule HumanPlayer.Impl do
     IO.puts "\nCONGRATULATIONS! The word was #{letters |> Enum.join}"
   end
 
-  defp get_next_move({_game, %{ letters: letters, game_state: :lost }}) do
+  defp get_next_move({game, %{ letters: letters, game_state: :lost }}) do
     clear_screen()
     IO.puts drawing(0)
-    IO.puts "\nSorry, you lose. The word was: #{letters |> Enum.join}"
+    IO.puts "\nSorry, you lose. The word was: #{game.letters |> Enum.join}"
   end
 
   defp get_next_move({game, state}) do
