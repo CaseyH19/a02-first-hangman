@@ -8,12 +8,12 @@ defmodule Hangman.Guess do
   end
 
   def repeat(false, game, guess) do
-    g2 = %{game | used: [guess | game.used]}
+    g2 = %{game | used: [guess | game.used], last_guess: guess}
     good_bad(Enum.member?(g2.letters, guess), g2)
   end
 
-  def repeat(true, game, _guess) do
-    %{game | game_state: :already_used}
+  def repeat(true, game, guess) do
+    %{game | game_state: :already_used, last_guess: guess}
   end
 
 

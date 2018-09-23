@@ -28,11 +28,11 @@ defmodule HumanPlayer.Impl do
 
   defp report_move_status(%{ game_state: :initializing }) do
   end
-  
+
   defp report_move_status(%{ game_state: :good_guess, last_guess: guess}) do
     IO.puts "#{inspect guess} is indeed in the word!\n"
   end
-  
+
   defp report_move_status(%{ game_state: :bad_guess, last_guess: guess}) do
     IO.puts "Ouch! #{inspect guess} is not in the word!\n"
   end
@@ -50,7 +50,6 @@ defmodule HumanPlayer.Impl do
 
   def guess_until_valid(state) do
     guess = IO.gets("Next letter:   ") |> String.downcase |> String.trim
-
     cond do
       String.length(guess) != 1 ->
         IO.puts "please enter a single character"

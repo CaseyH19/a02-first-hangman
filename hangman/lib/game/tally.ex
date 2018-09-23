@@ -1,7 +1,7 @@
 defmodule Hangman.Tally do
 
   defstruct(
-    game_state: :initialized,
+    game_state: :initializing,
     turns_left: 7,
     letters: [],
     used: [],
